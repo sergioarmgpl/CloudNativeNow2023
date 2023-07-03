@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: consumer
+  name: consumer
+  namespace: project
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: consumer
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        linkerd.io/inject: enabled
+      creationTimestamp: null
+      labels:
+        app: consumer
+    spec:
+      containers:
+      - image: sergioarmgpl/consumer-proj
+        name: consumer-proj
+        env:
+        - name: MONGODB_URI
+          value: "YOUR_MONGODB_URI"
+        - name: GRPC_SERVER
+          value: "server-azure:50051"
+        resources: {}
+status: {}

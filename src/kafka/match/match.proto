@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package match;
+
+option go_package = "./match";
+
+message MatchRequest {
+    string team1 = 1;
+    string team2 = 2;
+    string score = 3;
+    int32 phase = 4;
+}
+
+message MatchReply {
+    string team1 = 1;
+    string team2 = 2;
+    string score = 3;
+    int32 phase = 4;
+}
+
+service Match {
+	rpc SendMessage(MatchRequest) returns (MatchReply) {}
+}

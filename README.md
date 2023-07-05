@@ -26,11 +26,6 @@ go install google.golang.org/grpc/cmd/protoc-gen-go-grpc
 ```
 
 Install grpc
-To generate the Go and Proto implementation
-```
-
-
-
 Command to generate Proto and Go code:
 ```
 protoc --go_out=. --go_opt=paths=source_relative \

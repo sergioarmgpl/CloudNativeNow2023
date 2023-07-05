@@ -2,3 +2,6 @@ yaml_me
 yaml_me/*
 certs
 certs/*
+env1
+env1/*
+__pycache__

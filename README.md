@@ -210,6 +210,10 @@ kubectl port-forward -n project svc/grafana 3000:3000
 Open Grafana in http://localhost:3000
 
 Open Locust http://0.0.0.0:8089 in the browser
+Use the following command to find to public IP where the IP is exposed and use it to set Locust
+```
+kubectl get svc -n project --context google
+```
 
 Open Azure in Redis and delete the keys to reset the dashboard running
 ```
